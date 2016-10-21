@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="css/style.css" rel="stylesheet">
+    </head>
+    <body>
+    <script>
+var age=22;
+function sayAge(){
+    alert(this.age);
+}
+alert(window.age);
+sayAge();
+window.sayAge();
+
+
+var age=29;
+window.color="red";
+delete window.color;
+delete window.age;
+alert(window.age);
+alert(window.color);
+
+
+    </script>
+    </body>
+</html>

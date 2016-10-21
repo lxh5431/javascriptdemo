@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<script type="text/javascript">
+function changeLink()
+{
+document.getElementById('myAnchor').innerHTML="访问 W3School"
+document.getElementById('myAnchor').href="../index.htm"/*tpa=http://www.w3school.com.cn/*/
+document.getElementById('myAnchor').target="_blank"
+}
+</script>
+</head>
+
+<body>
+<a id="myAnchor" href="javascript:if(confirm('http://www.microsoft.com/  \n\n该文件未被 Teleport Pro 下载，因为 它位于起始地址以设置的边界以外的域或路径中。  \n\n你想要从服务器打开它吗?'))window.location='http://www.microsoft.com/'" tppabs="http://www.microsoft.com/">访问 Microsoft</a>
+<input type="button" onclick="changeLink()" value="改变链接">
+<p></p>
+</body>
+
+</html>

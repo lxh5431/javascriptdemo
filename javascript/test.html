@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+   
+    
+  </head>  
+  <body >
+      <div>
+          <ul>
+            <button onclick="myFunction()">try it</button>
+          </ul>
+      </div>  
+     <script>
+     function Person(){
+         Person.prototype.name="xiehanisdakengbi";
+         Person.prototype.age=23;
+         Person.prototype.job="Software engineer"
+     }
+     var person1=new Person();
+     var person2=new Person();
+     person1.name="liny";
+     alert("name" in person1);
+     alert(person2.name in person2);
+     delete person1.name;
+     alert(person1.name);
+
+  </script>
+    </body>
+</html>
