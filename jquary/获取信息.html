@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/style.css" rel="stylesheet">
+    <script>
+        function button1_onclick() { //cpu 信息 
+            var locator = new ActiveXObject("WbemScripting.SWbemLocator");
+            var service = locator.ConnectServer(".");
+            var properties = service.ExecQuery("SELECT * FROM Win32_Processor");
+            var e = new Enumerator(properties);
+            document.write("<table border=1>");
+            for (; !e.atEnd(); e.moveNext()) {
+                var p = e.item();
+                document.write("<tr>");
+                document.write("<td>" + p.Caption + "</td>");
+                document.write("<td>" + p.DeviceID + "</td>");
+                document.write("<td>" + p.Name + "</td>");
+                document.write("<td>" + p.CpuStatus + "</td>");
+                document.write("<td>" + p.Availability + "</td>");
+                document.write("<td>" + p.Level + "</td>");
+                document.write("<td>" + p.ProcessorID + "</td>");
+                document.write("<td>" + p.SystemName + "</td>");
+                document.write("<td>" + p.ProcessorType + "</td>");
+                document.write("</tr>");
+            }
+            document.write("</table>");
+        }
+
+        function Button2_onclick() { //CD-ROM 信息 
+            var locator = new ActiveXObject("WbemScripting.SWbemLocator");
+            var service = locator.ConnectServer(".");
+            var properties = service.ExecQuery("SELECT * FROM Win32_CDROMDrive");
+            var e = new Enumerator(properties);
+            document.write("<table border=1>");
+            for (; !e.atEnd(); e.moveNext()) {
+                var p = e.item();
+                document.write("<tr>");
+                document.write("<td>" + p.Caption + "</td>");
+                document.write("<td>" + p.Description + "</td>");
+                document.write("<td>" + p.Drive + "</td>");
+                document.write("<td>" + p.Status + "</td>");
+                document.write("<td>" + p.MediaLoaded + "</td>");
+                document.write("</tr>");
+            }
+            document.write("</table>");
+        }
+
+        function Button3_onclick() { //键盘信息 
+            var locator = new ActiveXObject("WbemScripting.SWbemLocator");
+            var service = locator.ConnectServer(".");
+            var properties = service.ExecQuery("SELECT * FROM Win32_Keyboard");
+            var e = new Enumerator(properties);
+            document.write("<table border=1>");
+            for (; !e.atEnd(); e.moveNext()) {
+                var p = e.item();
+                document.write("<tr>");
+                document.write("<td>" + p.Description + "</td>");
+                document.write("<td>" + p.Name + "</td>");
+                document.write("<td>" + p.Status + "</td>");
+                document.write("</tr>");
+            }
+            document.write("</table>");
+        }
+
+        function Button4_onclick() { //主板信息 
+            var locator = new ActiveXObject("WbemScripting.SWbemLocator");
+            var service = locator.ConnectServer(".");
+            var properties = service.ExecQuery("SELECT * FROM Win32_BaseBoard");
+            var e = new Enumerator(properties);
+            document.write("<table border=1>");
+            for (; !e.atEnd(); e.moveNext()) {
+                var p = e.item();
+                document.write("<tr>");
+                document.write("<td>" + p.HostingBoard + "</td>");
+                document.write("<td>" + p.Manufacturer + "</td>");
+                document.write("<td>" + p.PoweredOn + "</td>");
+                document.write("<td>" + p.Product + "</td>");
+                document.write("<td>" + p.SerialNumber + "</td>");
+                document.write("<td>" + p.Version + "</td>");
+                document.write("</tr>");
+            }
+            document.write("</table>");
+        }
+    </script>
+</head>
+
+<body>
+
+    <div>
+        <button id="test1" value="test1" onclick="button1_onclick">TEST</button>
+    </div>
+    <div>
+        <button id="test2" value="test2" onclick="button2_onclick">TEST</button>
+    </div>
+    <div>
+        <button id="test3" value="test3" onclick="button3_onclick">TEST</button>
+    </div>
+    <div>
+        <button id="test14" value="test4" onclick="button4_onclick">TEST</button>
+    </div>
+</body>
+
+</html>

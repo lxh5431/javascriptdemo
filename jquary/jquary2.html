@@ -6,41 +6,42 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="css/style.css" rel="stylesheet">
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js">
-    </script>
-    <script>
-        $(document).ready(function() {
-            $("button").click(function() {
-                var div = $("div");
-                div.animate({
-                    height: '300px',
-                    opacity: '0.4'
-                }, "slow");
-                div.animate({
-                    width: '300px',
-                    opacity: '0.8'
-                }, "slow");
-                div.animate({
-                    height: '100px',
-                    opacity: '0.4'
-                }, "slow");
-                div.animate({
-                    width: '100px',
-                    opacity: '0.8'
-                }, "slow");
-
-
-            });
-
-        });
-    </script>
 </head>
 
 <body>
-    <button>开始动画</button>
-    <p>默认情况下，所有 HTML 元素的位置都是静态的，并且无法移动。如需对位置进行操作，记得首先把元素的 CSS position 属性设置为 relative、fixed 或 absolute。</p>
-    <div style="background:#98bf21;height:100px;width:100px;position:absolute;"></div>
+    <!-- header navigation -->
+    <div id="header" style="opacity: 0.3;"></div>
+    <header style="opacity: 1;">
+        <div id="logo">
+            <div id="header_img"><img src="./web前端工程师简历_files/logo.jpg" alt="" data-pin-nopin="true"></div>
+            <div id="header_p">
+                <p id="header_p1">F2E</p>
+                <p id="header_p2">个人简历</p>
+            </div>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="http://www.flqin.com/">首页</a></li>
+                <li><a href="http://www.flqin.com/">随笔</a></li>
+                <li><a href="http://www.flqin.com/">积淀</a></li>
+                <li><a href="http://www.flqin.com/">关于</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- header navigation end -->
+    <!-- aside navigation -->
+    <aside style="top: 242px; display: block;">
+        <a href="#page1" class="selected"><b>首页</b></a>
+        <a href="#page2" class=""><b>关于我</b></a>
+        <a href="#page3" class=""><b>专业技能</b></a>
+        <a href="#page4" class=""><b>我的经历</b></a>
+        <a href="#page5" class=""><b>我的作品</b></a>
+        <a href="#page6" class=""><b>联系我</b></a>
+    </aside>
 
+</body>
+
+</html>
 
 </body>
 

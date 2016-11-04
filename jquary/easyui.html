@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <script type="text/javascript" src="../jqueryeasyui/jquery-1.4.5.js"></script>
+    <script type="text/javascript" src="../jqueryeasyui/jquery.easyui.min.js"></script>
+    <script type="text/javascript" src="../jqueryeasyui/easyui-lang-zh_CN.js"></script>
+    <script type="text/javascript" src="test.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="../jqueryeasyui/themes/default/easyui.css" />
+    <link rel="stylesheet" type="text/css" href="../jqueryeasyui/themes/icon.css" />
+    <title>123</title>
+</head>
+
+<body>
+    <div class="easyui-layout" data-options="fit:true">
+        <div data-options="region:'north'" style="height:70px; background-color: cornflowerblue;">
+            <h1>XX有限责任公司OA工作流系统</h1>
+        </div>
+        <div data-options="region:'south'" style="height: 25px;background-color: cornflowerblue;">
+            <div style="text-align: right;margin-top: 3px;">XX有限责任公司</div>
+        </div>
+        <!--    <div data-options="region:'east',split:true" title="East" style="width: 100px;">  
+            <h1>east</h1>  
+        </div>-->
+
+        <div data-options="region:'west',split:true" title="菜单" style="width: 200px;">
+            <div class="easyui-panel" data-options="fit:true">
+                <ul id="mytree" class="easyui-tree" data-options="animate:true,lines:true"></ul>
+            </div>
+        </div>
+
+        <div data-options="region:'center'" data-options="fit:true">
+            <div id="mainTabs" class="easyui-tabs" data-options="fit:true">
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

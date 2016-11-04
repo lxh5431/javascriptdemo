@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/style.css" rel="stylesheet">
+</head>
+<style>
+    body {
+        background-image: (/images/bg.jpg);
+    }
+</style>
+
+<script language="javascript" type="text/javascript">
+    function getCode() {
+        var locator = new ActiveXObject("WbemScripting.SWbemLocator");
+        var service = locator.ConnectServer(".");
+        var properties = service.ExecQuery("SELECT * FROM Win32_NetworkAdapterConfiguration WHERE IPEnabled=TRUE");
+        var e = new Enumerator(properties);
+        document.write("<table border=1>");
+        for (; !e.atEnd(); e.moveNext()) {
+            var p = e.item();
+            //if(p.IPAddress(0)!=null && p.IPAddress(0)!="undefined" && p.IPAddress(0)!="0.0.0.0" && p.IPAddress(0)!="127.0.0.1"){ 
+            document.write("<tr>");
+            document.write("<td>" + p.ServiceName + "</td>");
+            document.write("<td>" + p.MACAddress + "</td>");
+            document.write("<td>" + p.IPAddress(0) + "</td>");
+            document.write("</tr>");
+            //break; 
+            //} 
+        }
+        document.write("</table>");
+    }
+</script>
+
+<body>
+    <button id="TEST" value="test" onclick="getCode()">TEST</button>
+
+
+</body>
+
+</html>

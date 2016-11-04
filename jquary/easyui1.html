@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/style.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="easyui/themes/default/easyui.css">
+    <link rel="stylesheet" type="text/css" href="easyui/themes/icon.css">
+    <script type="text/javascript" src="easyui/jquery-1.7.2.min.js"></script>
+    <script type="text/javascript" src="easyui/jquery.easyui.min.js"></script>
+
+    <script type="text/javascript">
+        function qq(value, name) {
+            alert(value + ":" + name)
+        }
+    </script>
+</head>
+
+<body>
+ <input id="ss" class="easyui-searchbox" style="width:300px" data-options="searcher:qq,prompt:'Please Input Value',menu:'#mm'"></input>
+
+    <div id="mm" style="width:120px">
+        <div data-options="name:'all',iconCls:'icon-ok'">All News</div>
+        <div data-options="name:'sports'">Sports News</div>
+    </div>
+    <div>
+    <ul id="tt" class="easyui-tree">   
+    <li>   
+        <span>Folder</span>   
+        <ul>   
+            <li>   
+                <span>Sub Folder 1</span>   
+                <ul>   
+                    <li>   
+                        <span><a href="#">File 11</a></span>   
+                    </li>   
+                    <li>   
+                        <span>File 12</span>   
+                    </li>   
+                    <li>   
+                        <span>File 13</span>   
+                    </li>   
+                </ul>   
+            </li>   
+            <li>   
+                <span>File 2</span>   
+            </li>   
+            <li>   
+                <span>File 3</span>   
+            </li>   
+        </ul>   
+    </li>   
+    <li>   
+        <span>File21</span>   
+    </li>   
+</ul>  
+    </div>
+
+</body>
+
+</html>

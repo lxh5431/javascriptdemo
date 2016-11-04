@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/style.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="jquaryeasyui/themes/default/easyui.css">
+    <link rel="stylesheet" type="text/css" href="jquaryeasyui/themes/icon.css">
+    <script type="text/javascript" src="jquaryeasyui/jquery-1.5.4.min.js"></script>
+    <script type="text/javascript" src="jquaryeasyui/jquery.easyui.min.js"></script>
+
+    <script>
+        $('#pp').portal(options);
+        // create the panel    
+        var p = $('<div></div>').appendTo('body');
+        p.panel({
+            title: 'My Title',
+            height: 150,
+            closable: true,
+            collapsible: true
+        });
+
+        // add the panel to portal    
+        $('#pp').portal('add', {
+            panel: p,
+            columnIndex: 0
+        });
+    </script>
+</head>
+
+<body>
+    <div id="pp" style="width:800px;height:500px;">
+        <div style="width:33%"></div>
+        <div style="width:33%"></div>
+        <div style="width:33%"></div>
+    </div>
+
+</body>
+
+</html>
