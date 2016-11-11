@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <script src="jquery.min.js"></script>
+    <script src="angular.js"></script>
+    <script src="angular-animate.js"></script>
+    <script src="angular-ui-router.js"></script>
+    <script src="bootstrap.min.js"></script>
+    <script type="text/javascript">
+        var app = angular.module('myapp', ['ui.router', 'ngAnimate']);
+        app.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
+            // $urlRouterProvider.when('', '/main1')
+            // .otherwise('/main1');
+            $stateProvider
+                .state('main1', {
+                    url: '/main1',
+                    template: 'hello world1'
+                })
+                .state('main2', {
+                    url: '/main2',
+                    template: 'hello world2'
+                });
+        }]);
+
+        app.controller('MyController', function($state) {
+            $state.go('main1');
+        });
+        app.animation('.fad', function() {
+            return {
+                enter: function(element, done) {
+                    element.css({
+                        opacity: 0
+                    });
+                    element.animate({
+                        opacity: 1
+                    }, 1000, done);
+                },
+                leave: function(element, done) {
+                    element.css({
+                        opacity: 1
+                    });
+                    element.animate({
+                        opacity: 0
+                    }, 1000, done);
+                }
+            };
+        });
+    </script>
+</head>
+
+<body ng-app="myapp" ng-controller="MyController">
+    <div class="container">
+        <div class="row clearfix">
+            <div class="col-md-12 column">
+                <nav class="navbar navbar-default" role="navigation">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"> <span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>                        <a class="navbar-brand" href="#">Brand</a>
+                    </div>
+                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                        <ul class="nav navbar-nav">
+                            <li class="active">
+                                <a href="#">Link</a>
+                            </li>
+                            <li>
+                                <a href="#">Link</a>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown<strong class="caret"></strong></a>
+                                <ul class="dropdown-menu">
+                                    <li>
+                                        <a href="#">Action</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Another action</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Something else here</a>
+                                    </li>
+                                    <li class="divider">
+                                    </li>
+                                    <li>
+                                        <a href="#">Separated link</a>
+                                    </li>
+                                    <li class="divider">
+                                    </li>
+                                    <li>
+                                        <a href="#">One more separated link</a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <form class="navbar-form navbar-left" role="search">
+                            <div class="form-group">
+                                <input type="text" class="form-control" />
+                            </div> <button type="submit" class="btn btn-default">Submit</button>
+                        </form>
+                        <ul class="nav navbar-nav navbar-right">
+                            <li>
+                                <a href="#">Link</a>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown<strong class="caret"></strong></a>
+                                <ul class="dropdown-menu">
+                                    <li>
+                                        <a href="#">Action</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Another action</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Something else here</a>
+                                    </li>
+                                    <li class="divider">
+                                    </li>
+                                    <li>
+                                        <a href="#">Separated link</a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </nav> <a id="modal-656721" href="#modal-container-656721" role="button" class="btn" data-toggle="modal">触发遮罩窗体</a>
+                <div class="modal fade" id="modal-container-656721" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                                <h4 class="modal-title" id="myModalLabel">
+                                    标题
+                                </h4>
+                            </div>
+                            <div class="modal-body">
+                                内容...
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button> <button type="button" class="btn btn-primary">保存</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel slide" id="carousel-371069">
+                    <ol class="carousel-indicators">
+                        <li data-slide-to="0" data-target="#carousel-371069">
+                        </li>
+                        <li data-slide-to="1" data-target="#carousel-371069" class="active">
+                        </li>
+                        <li data-slide-to="2" data-target="#carousel-371069">
+                        </li>
+                    </ol>
+                    <div class="carousel-inner">
+                        <div class="item">
+                            <img alt="" src="default.jpg" />
+                            <div class="carousel-caption">
+                                <h4>
+                                    First Thumbnail label
+                                </h4>
+                                <p>
+                                    Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="item active">
+                            <img alt="" src="default1.jpg" />
+                            <div class="carousel-caption">
+                                <h4>
+                                    Second Thumbnail label
+                                </h4>
+                                <p>
+                                    Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <img alt="" src="default2.jpg" />
+                            <div class="carousel-caption">
+                                <h4>
+                                    Third Thumbnail label
+                                </h4>
+                                <p>
+                                    Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.
+                                </p>
+                            </div>
+                        </div>
+                    </div> <a class="left carousel-control" href="#carousel-371069" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a> <a class="right carousel-control" href="#carousel-371069" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
+                </div>
+            </div>
+        </div>
+        <div class="row clearfix">
+            <div class="col-md-4 column">
+                <img alt="140x140" src="default3.jpg" />
+                <h2>
+                    Heading
+                </h2>
+                <p>
+                    Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
+                </p>
+                <p>
+                    <a class="btn" href="#">View details »</a>
+                </p>
+            </div>
+            <div class="col-md-4 column">
+                <img alt="140x140" src="default3.jpg" />
+                <h2>
+                    Heading
+                </h2>
+                <p>
+                    Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
+                </p>
+                <p>
+                    <a class="btn" href="#">View details »</a>
+                </p>
+            </div>
+            <div class="col-md-4 column">
+                <img alt="140x140" src="default3.jpg" />
+                <h2>
+                    Heading
+                </h2>
+                <p>
+                    Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
+                </p>
+                <p>
+                    <a class="btn" href="#">View details »</a>
+                </p>
+            </div>
+        </div>
+        <div class="row clearfix">
+            <div class="col-md-12 column">
+                <div class="panel-group" id="panel-601502">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <a class="panel-title collapsed" data-toggle="collapse" data-parent="#panel-601502" href="#panel-element-389831">Collapsible Group Item #1</a>
+                        </div>
+                        <div id="panel-element-389831" class="panel-collapse collapse">
+                            <div class="panel-body">
+                                Anim pariatur cliche...
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <a class="panel-title collapsed" data-toggle="collapse" data-parent="#panel-601502" href="#panel-element-854147">Collapsible Group Item #2</a>
+                        </div>
+                        <div id="panel-element-854147" class="panel-collapse collapse">
+                            <div class="panel-body">
+                                Anim pariatur cliche...
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row clearfix">
+            <div class="col-md-12 column">
+                <form role="form">
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Email address</label><input type="email" class="form-control" id="exampleInputEmail1" />
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputPassword1">Password</label><input type="password" class="form-control" id="exampleInputPassword1" />
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputFile">File input</label><input type="file" id="exampleInputFile" />
+                        <p class="help-block">
+                            Example block-level help text here.
+                        </p>
+                    </div>
+                    <div class="checkbox">
+                        <label><input type="checkbox" />Check me out</label>
+                    </div> <button type="submit" class="btn btn-default">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

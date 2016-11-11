@@ -1,0 +1,46 @@
+/*header start*/
+
+navbar-nar.logo {
+    float: left;
+    margin: 5px 30px;
+}
+
+
+nav {
+    float: right;
+}
+
+nav li {
+    float: left;
+    margin: 5px 20px;
+    text-decoration: none;
+}
+
+nav li a {
+    padding: 25px 0;
+    position: relative;
+    color: #666;
+}
+
+nav li a:after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    right: 50%;
+    bottom: 0;
+    height: 2px;
+    background: #1FAEFF;
+    opacity: 0;
+    -webkit-transition: .2s ease-in;
+    transition: .2s ease-in;
+}
+
+nav li a:hover {
+    color: #000;
+}
+
+nav li a:hover:after {
+    left: 0;
+    right: 0;
+    opacity: 1;
+}
