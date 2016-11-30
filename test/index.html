@@ -6,6 +6,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="css/style.css" rel="stylesheet">
+    <script src="http://libs.baidu.com/jquery/1.7.2/jquery.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            // 隐藏tab2  
+            $("table#tab2").hide();
+
+            $("input#a").click(function() {
+                $("table#tab3").show();
+                $("table#tab2").hide();
+            });
+            $("input#b").click(function() {
+                $("table#tab2").show();
+                $("table#tab3").hide();
+            });
+        });
+    </script>
 </head>
 
 <body>
@@ -20,8 +36,18 @@
                     <li><a href="#">更多</a></li>
                 </ul>
             </div>
+
+            <div class="image">
+                <img src="img/aa.jpg" alt="请重新刷新">
+
+            </div>
+            <div class="serch1">
+                <span class="search-icon"></span>
+                <input class="before" id="name" type="search" name="q" placeholder="Search" autocomplete="off" onFocus="showAfter()" onblur="showBefore()" />
+                <button type="submit" class="btn" id="search" style="display: none;">GO</button>
+            </div>
         </div>
-        <div class="left">
+        <div class="left1">
             <div id="menu">
                 <ul>
                     <li class="menu"> <a href="#">后台管理</a>
@@ -35,7 +61,7 @@
                 </ul>
             </div>
         </div>
-        <div class="right">
+        <div class="right1">
             <div class="content">
                 <div class="one">
                     <div class="exit">
@@ -89,6 +115,84 @@
                         </ul>
                     </li>
                 </ul>
+            </div>
+            <div class="table">
+                <form metdod="post" action="" style="margin:25px;">
+                    <table id="tab1">
+                        <tr style="border-bottom:#D8E8F8 1px solid;">
+                            <td align="left">会员登录</td>
+                            <td colspan="2"><a href="1.html">立即注册</a>，享积分换礼、返现等专属优惠！</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td colspan="3" align="center">
+                                <input id="a" type="radio" name="denglu" value="普通登录" />普通登录
+                                <input id="b" type="radio" name="denglu" value="手机动态密码登录" />手机动态密码登录</td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                    </table>
+
+                    <table id="tab2">
+                        <tr>
+                            <td>手机号</td>
+                            <td>
+                                <input id="c" type="text" class="input" value="请输入注册手机号" /></td>
+                            <td>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>验证码</td>
+                            <td><input id="d" type="text" name="password" b class="input" value="不区分大小写" /></td>
+                            <td><img src="../../images/验证码.png" style="height:20px; widtd:80%; " /></td>
+                        </tr>
+                        <tr>
+                            <td>密 码</td>
+                            <td><input id="e" type="text" name="password" b class="input" value="请输入6-20位密码" /></td>
+                            <td><input id="f" type="submit" value="发送动态密码" /></td>
+                        </tr>
+                        <tr>
+                            <td colspan="3" align="center">
+                                <input id="i" type="checkbox" name="save" value="30天内自动登录" />30天内自动登录</td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td colspan="3">
+                                <input id="j" type="submit" value="登录" align="center" style="color:#FFF; cursor:pointer; background-color:#FF0;" /></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                    </table>
+
+                    <table id="tab3">
+                        <tr>
+                            <td>登录名</td>
+                            <td>
+                                <input id="g" type="text" class="input" value="用户名/卡号/手机号/邮箱" /></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>密 码</td>
+                            <td><input id="h" type="text" name="password" b class="input" value="请输入6-20位密码" /></td>
+                            <td><a href="">忘记密码？</a></td>
+                        </tr>
+                        <tr>
+                            <td colspan="3" align="center">
+                                <input id="i" type="checkbox" name="save" value="30天内自动登录" />30天内自动登录</td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td colspan="3">
+                                <input id="j" type="submit" value="登录" align="center" style="color:#FFF; cursor:pointer;text-shadow:#F60 1px ;background-color:#F60;width:220px;height:42px; margin-bottom: 8px; font-size: 18px;font-family: " Microsoft YaHei
+                                    ",SimSun,Tahoma,Verdana,Arial, sans-serif;"/></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                    </table>
+                </form>
+
             </div>
 
         </div>

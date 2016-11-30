@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>盒子模型</title>
+    <style type="text/css">
+        /*大部分HTML元素的盒子属性（padding,margin)都默认为0
+有少数HTML元素的浏览器默认值不为0，例如body p ul li 
+form 标记等，因此我们有时有必要先设置它们的这些属性为0
+CSS全局reset*/
+        
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        
+        #box {
+            width: 400px;
+            /*边框
+粗细 样式 颜色*/
+            border: 5px solid purple;
+            /*内边距
+指的是盒子与边框之间的距离
+盒子里的width指的是内容的宽度，如果有内边距则div盒子会被撑开，内容宽度不变   
+加入内边距的div盒子宽度：5*2+400+30*2=470*/
+            /*padding: 30px;*/
+            /*各个方向的内边距*/
+            /*padding-top: 20px;
+padding-right: 50px;
+padding-bottom: 100px;
+padding-left: 150px;*/
+            /*一个参数的时候，代表上下左右四个方向
+两个参数的时候，第一个代表上下，第二个代表左右方向
+三个参数的时候，第一个代表上，第二个代表左右，第二个代表下方向
+四个参数的时候，代表上右下左四个方向，也就是顺时针方向*/
+            padding: 30px 60px 10px 20px;
+        }
+        
+        img {
+            width: 100px;
+            height: 100px;
+        }
+        /*外边距
+上下外边距会合并，左右外边距会累加*/
+        
+        #meinv {
+            margin-right: 100px;
+        }
+        
+        #shuaige {
+            margin-left: 50px;
+        }
+        
+        div {
+            width: 300px;
+            height: 200px;
+        }
+        
+        #box1 {
+            background: purple;
+            margin-bottom: 100px;
+        }
+        
+        #box2 {
+            background: green;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box">
+        中华民族是最值得自豪的民族，不仅是因为我们拥有世界最多的人口，更因为我们拥有热爱祖国献身祖国的高尚风范、拥有善于学习勇于创新的聪明智慧、拥有志存高远兼济天下的宽广心胸、拥有百折不挠勇往直前的英雄气概。每到国家民族危难之时，总有英雄豪杰挺身而出，为大家舍小家，“亟拯斯民于水火，切扶大厦之将倾。
+    </div>
+
+
+    <div id="box1"></div>
+    <div id="box2"></div>
+    <img src="meinv.png" id="meinv" />
+    <img src="shuaige.png" id="shuaige" />
+
+
+    <!-- 上下外边距会合并，左右外边距会累加 -->
+    <!-- 内边距不能设置为负值（相当于盒子里面装的物品肯定是要能装下的），外边距可以是负值 （相当于盒子与盒子之间是可以重叠的，例子：刀捅树里面）-->
+
+</body>
+
+</html>

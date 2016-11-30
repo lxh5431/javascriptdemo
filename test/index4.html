@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>haha</title>
+    <style type="text/css">
+        table {
+            position: absolute;
+            width: 320px;
+            margin-left: 100px;
+        }
+        
+        td {
+            text-align: center;
+            font-family: "Oleo Script";
+            inline-size: 1px;
+        }
+        
+        tr {
+            background-color: #fff;
+        }
+        
+        tr:hover {
+            background-color: #f2f2f2;
+        }
+        
+        button {
+            display: block;
+            height: 100%;
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="table">
+        <table border="1" cellspacing="0" id="Table">
+            <tr id="no1">
+                <td>姓名</td>
+                <td>学号</td>
+                <td>手机号码</td>
+                <td>功能</td>
+            </tr>
+            <tr id="no2">
+                <td>韩梅梅</td>
+                <td>1</td>
+                <td>15236077621</td>
+                <td><button onclick="del(this)">删除</button></td>
+            </tr>
+            <tr id="no3">
+                <td>李雷</td>
+                <td>2</td>
+                <td>15236077622</td>
+                <td><button onclick="del(this)">删除</button></td>
+            </tr>
+            <tr id="no4">
+                <td>李华</td>
+                <td>3</td>
+                <td>15236077623</td>
+                <td><button onclick="del(this)">删除</button></td>
+            </tr>
+            <tr>
+                <td colspan="4">
+                    <button style="width: 100%;" onclick="add()">添加</button>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+
+    <script type="text/javascript">
+        function del(obj) {
+            var no = obj.parentNode.parentNode.rowIndex; //获得当前行行数  
+            //alert(no);  
+            document.getElementById("Table").deleteRow(no); //直接删除该行  
+        }
+
+        function add() {
+            var tab = document.getElementById("Table");
+            // var tr=document.creatElement("tr");  
+            // var td=document.creatElement("td");  
+            // td.innerHTML="234";  
+            // tr.appendChild(td);  
+            // tab.appendChild(tr);  
+
+            var row = tab.rows.length - 1; //获得表格总行数  
+            //alert(row);  
+            var tem = tab.insertRow(row); //添加行  
+            tem.insertCell(0).innerHTML = "小张"; //向添加行的单元格添加内容  
+            tem.insertCell(1).innerHTML = row;
+            tem.insertCell(2).innerHTML = "1523607762" + row;
+            tem.insertCell(3).innerHTML = "<button onclick='del(this)'>删除</button>";
+        }
+    </script>
+</body>
+
+</html>
