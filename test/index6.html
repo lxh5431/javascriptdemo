@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        #branding {
+            width: 700px;
+            height: 100px;
+            position: relative;
+        }
+        
+        #branding .tel {
+            position: absolute;
+            right: 10px;
+            bottom: 10px;
+            text-align: right;
+        }
+        
+        .news {
+            background-color: gray;
+            border: solid 1px black;
+            float: left;
+        }
+        
+        .nes img {
+            float: left;
+        }
+        
+        .news p {
+            float: right;
+        }
+        
+        .clear {
+            clear: both;
+        }
+        
+        .clear:::after {
+            content: ".";
+            height: 0;
+            visibility: hidden;
+            display: block;
+            clear: both;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="branding">
+        <p class="tel">tel: 0854b 838 6163</p>
+    </div>
+    <div class="news">
+        <img src="img/aa.jpg" />
+        <p>Some text</p>
+
+    </div>
+    <div class="news">
+        <img src="img/aa.jpg" />
+        <p>Some text</p>
+
+    </div>
+    <div class="news">
+        <img src="img/aa.jpg" />
+        <p>Some text</p>
+
+    </div>
+
+    <div class="clear">
+
+    </div>
+</body>
+
+</html>

@@ -366,7 +366,7 @@ body {
 .table {
     float: right;
     position: absolute;
-    top: 120px;
+    top: 0px;
     right: 120px;
     background-color: #aaa;
 }
@@ -409,4 +409,11 @@ tr {
 .tab3 {
     margin: 15px;
     height: 200px;
+}
+
+#wrapper2 {
+    height: 300px;
+    width: 1000px;
+    max-width: 100%;
+    margin: 20px auto;
 }

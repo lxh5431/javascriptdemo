@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/style.css" rel="stylesheet">
+</head>
+
+
+<script type="text/javascript">
+    Object.prototype.hide = function() {
+            document.getElementById('nameId').style.display = "none";
+            return this;
+        }
+        //show()
+    Object.prototype.show = function() {
+            document.getElementById('nameId').style.display = "block";
+            return this;
+        }
+        //slideDown() 
+    Object.prototype.slideDown = function() {
+            this.style.display = 'block';
+            if (this.clientHeight < this.scrollHeight) {
+                this.style.height = 10 + this.clientHeight + "px";
+                var _this = this;
+                setTimeout(function() {
+                    _this.slideDown()
+                }, 10)
+            } else {
+                this.style.height = this.scrollHeight + "px";
+            }
+        }
+        //slideUp() 
+    Object.prototype.slideUp = function() {
+        if (this.clientHeight > 0) {
+            this.style.height = this.clientHeight - 10 + "px";
+            var _this = this;
+            setTimeout(function() {
+                _this.slideUp()
+            }, 10)
+        } else {
+            this.style.height = 0;
+            this.style.display = 'none';
+        }
+    }
+</script>
+
+<body>
+    <input type="button" onclick="show()" value="显示" />
+    <input type="button" onclick="hide()" value="隐藏" />
+    <input type="button" onclick="slideUp()" value="滑动" />
+    <input type="button" onclick="slideDown()" value="向上滑动" />
+    <div id="nameId">
+        我知道我该来的总是回来
+    </div>
+</body>
+
+</html>

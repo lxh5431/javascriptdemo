@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<style>
+    .box {
+        position: fixed;
+        width: 100%;
+        height: 100%;
+    }
+    
+    .nav {
+        position: relative;
+        width: 100%;
+        height: 100px;
+    }
+    
+    .nav li {
+        cursor: pointer;
+        width: 50px;
+        height: 100px;
+        float: right;
+        margin-left: 60px;
+        list-style-type: none;
+        text-align: center;
+    }
+    
+    .nav li a {
+        background-color: #bbb;
+        display: block;
+        margin: .2em .2em .5em 0;
+        font-size: 20px;
+        font-family: "Oleo Script";
+        text-decoration: none;
+    }
+    
+    .nav li:hover {
+        box-shadow: none;
+        border-radius: 10px;
+    }
+    
+    .nav li:hover {
+        box-shadow: 0px 3px 5px rgba(102, 118, 75, 0.3);
+        border-radius: 3px;
+    }
+    
+    .menu {
+        position: relative;
+    }
+    
+    .right {
+        position: absolute;
+        width: 600px;
+        height: 800px;
+    }
+</style>
+<script src="http://libs.baidu.com/jquery/1.7.2/jquery.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function() {
+        // 隐藏tab2  
+        $("table#tab2").hide();
+
+        $("input#a").click(function() {
+            $("table#tab3").show();
+            $("table#tab2").hide();
+        });
+        $("input#b").click(function() {
+            $("table#tab2").show();
+            $("table#tab3").hide();
+        });
+    });
+</script>
+
+<body>
+    <div class="box">
+
+
+        <div class="nav">
+            <ul>
+                <li class="menu"><a href="#">主页</a></li>
+                <li><a href="#">博客</a></li>
+                <li><a href="#">案例</a></li>
+                <li><a href="#">关于</a></li>
+                <li><a href="#">更多</a></li>
+            </ul>
+        </div>
+        <div class="menu">
+            <ul>
+                <li><a href="">菜单一</a>
+                    <ul>
+                        <li><a href="">子菜单1</a></li>
+                        <li><a href="">子菜单2</a>
+                            <ul>
+                                <li><a href="">子菜单7</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="">子菜单3</a></li>
+                    </ul>
+                </li>
+                <li><a href="">菜单二</a>
+                    <ul>
+                        <li><a href="">子菜单4</a></li>
+                        <li><a href="">子菜单5</a></li>
+                        <li><a href="">子菜单6</a></li>
+                    </ul>
+                </li>
+            </ul>
+
+        </div>
+        <div class="table">
+            <form metdod="post" action="" style="margin:25px;">
+                <table id="tab1">
+                    <tr style="border-bottom:#D8E8F8 1px solid;">
+                        <td align="left">会员登录</td>
+                        <td colspan="2"><a href="1.html">立即注册</a>，享积分换礼、返现等专属优惠！</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td colspan="3" align="center">
+                            <input id="a" type="radio" name="denglu" value="普通登录" />普通登录
+                            <input id="b" type="radio" name="denglu" value="手机动态密码登录" />手机动态密码登录</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </table>
+
+                <table id="tab2">
+                    <tr>
+                        <td>手机号</td>
+                        <td>
+                            <input id="c" type="text" class="input" value="请输入注册手机号" /></td>
+                        <td>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>验证码</td>
+                        <td><input id="d" type="text" name="password" b class="input" value="不区分大小写" /></td>
+                        <td><img src="../../images/验证码.png" style="height:20px; widtd:80%; " /></td>
+                    </tr>
+                    <tr>
+                        <td>密 码</td>
+                        <td><input id="e" type="text" name="password" b class="input" value="请输入6-20位密码" /></td>
+                        <td><input id="f" type="submit" value="发送动态密码" /></td>
+                    </tr>
+                    <tr>
+                        <td colspan="3" align="center">
+                            <input id="i" type="checkbox" name="save" value="30天内自动登录" />30天内自动登录</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td colspan="3">
+                            <input id="j" type="submit" value="登录" align="center" style="color:#FFF; cursor:pointer; background-color:#FF0;" /></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </table>
+
+                <table id="tab3">
+                    <tr>
+                        <td>登录名</td>
+                        <td>
+                            <input id="g" type="text" class="input" value="用户名/卡号/手机号/邮箱" /></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>密 码</td>
+                        <td><input id="h" type="text" name="password" b class="input" value="请输入6-20位密码" /></td>
+                        <td><a href="">忘记密码？</a></td>
+                    </tr>
+                    <tr>
+                        <td colspan="3" align="center">
+                            <input id="i" type="checkbox" name="save" value="30天内自动登录" />30天内自动登录</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td colspan="3">
+                            <input id="j" type="submit" value="登录" align="center" style="color:#FFF; cursor:pointer;text-shadow:#F60 1px ;background-color:#F60;width:220px;height:42px; margin-bottom: 8px; font-size: 18px;font-family: " Microsoft YaHei
+                                ",SimSun,Tahoma,Verdana,Arial, sans-serif;"/></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </table>
+            </form>
+
+        </div>
+    </div>
+</body>
+
+</html>
